@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '94fe4c8cc694b264f02ba38f40c741a090ea3c9fb91fae7a841f8e83300fe1182c3124f8b5e1ed7dfccc82c87b387b229eb9cfb813efb8974263e2bda05c16d1'
+  # config.secret_key = '37ee5479067d78c449a10f19b3496a64701b34cf0595042d50851c452ebadf35de6aac5650db775dbd0e413fe851abef939f94546892c299811188524af6cb9e'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -108,7 +108,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '96d84c3f4402eee3a3669102f4ce63f6f7e36d050e104bed9abcd294763ee5084f25979f8479dab0edf6b7374c5124479d9ec3f014eaa182a1272d0ffdfaa957'
+  # config.pepper = '8a27fc975cc0f2f774695e0c29f74a0641458922b1dcd545eddcb4c52a2753f627f44dd6a3ec4da6ec9ad774b05211ccb4152ad403f848a981aabe2d3cbfdf02'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -157,7 +157,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 6..128
+  config.password_length = 7..128
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -247,6 +247,8 @@ Devise.setup do |config|
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
 
+  config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET']
+
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
@@ -274,5 +276,4 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-  config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET']
 end
